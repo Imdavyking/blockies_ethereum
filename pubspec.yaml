@@ -1,7 +1,8 @@
 name: blockies_ethereum
-description: A new Flutter package project.
+description: Generate metamask kind of blockies with ethereum address.
 version: 0.0.1
-homepage:
+repository: https://github.com/Imdavyking/blockies_ethereum
+issue_tracker: https://github.com/Imdavyking/blockies_ethereum/issues
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
