@@ -1,11 +1,13 @@
 import 'dart:math';
 
+import 'package:blockies_ethereum/blockies_ethereum.dart';
 import 'package:blockies_ethereum/ethereum_blockies.dart';
 import 'package:flutter/material.dart';
 
 class BlockiePainter extends CustomPainter {
   String address;
-  BlockiePainter(this.address);
+  BlockiesShape shape;
+  BlockiePainter(this.address, this.shape);
   @override
   void paint(Canvas canvas, Size size) {
     canvas.scale(size.width);
@@ -36,13 +38,15 @@ class BlockiePainter extends CustomPainter {
     paint.color = backGroundColor_;
     paint.style = PaintingStyle.fill;
 
-    canvas.clipRRect(
-      RRect.fromRectAndRadius(
-        Rect.fromLTWH(
-            -w.toDouble() / 2, -w.toDouble() / 2, w.toDouble(), w.toDouble()),
-        Radius.circular(w.toDouble() / 2),
-      ),
-    );
+    if (shape == BlockiesShape.circle) {
+      canvas.clipRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(
+              -w.toDouble() / 2, -w.toDouble() / 2, w.toDouble(), w.toDouble()),
+          Radius.circular(w.toDouble() / 2),
+        ),
+      );
+    }
     canvas.drawRect(
         Rect.fromLTWH(
             -w.toDouble() / 2, -h.toDouble() / 2, w.toDouble(), h.toDouble()),

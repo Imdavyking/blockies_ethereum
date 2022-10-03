@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Blockies(
         data: userAddress.toLowerCase(),
         size: .8,
+        shape: BlockiesShape.circle,
       ),
     );
   }
